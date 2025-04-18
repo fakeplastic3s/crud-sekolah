@@ -22,4 +22,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+    Route::get('/kelas', [\App\Http\Controllers\Kelas::class, 'index'])->name('kelas.index');
+    Route::get('/kelas/tambah', [\App\Http\Controllers\Kelas::class, 'tambah'])->name('kelas.tambah');
+    Route::post('/kelas/simpan', [\App\Http\Controllers\Kelas::class, 'simpan'])->name('kelas.simpan');
+    Route::get('/kelas/edit/{id}', [\App\Http\Controllers\Kelas::class, 'edit'])->name('kelas.edit');
+    Route::post('/kelas/update/{id}', [\App\Http\Controllers\Kelas::class, 'update'])->name('kelas.update');
+    Route::DELETE('/kelas/hapus/{id}', [\App\Http\Controllers\Kelas::class, 'hapus'])->name('kelas.hapus');
 });
