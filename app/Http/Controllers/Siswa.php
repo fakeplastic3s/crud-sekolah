@@ -43,6 +43,7 @@ class Siswa extends Controller
         $siswa->nama_ibu = $request->nama_ibu;
         $siswa->alamat = $request->alamat;
         $siswa->save();
+        \Session::flash('flash_message', 'Data Berhasil Ditambahkan');
 
         return redirect()->route('siswa.index');
     }
@@ -64,6 +65,7 @@ class Siswa extends Controller
         $siswa->nama_ibu = $request->nama_ibu;
         $siswa->alamat = $request->alamat;
         $siswa->save();
+        \Session::flash('flash_message', 'Data Berhasil Diubah');
 
         return redirect()->route('siswa.index');
     }
@@ -71,6 +73,7 @@ class Siswa extends Controller
     {
         $siswa = \App\Models\Siswa::find($id);
         $siswa->delete();
+        \Session::flash('flash_message', 'Data Berhasil Dihapus');
 
         return redirect()->route('siswa.index');
     }

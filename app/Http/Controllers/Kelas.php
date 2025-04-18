@@ -27,6 +27,7 @@ class Kelas extends Controller
         $kelas = new \App\Models\Kelas();
         $kelas->nama_kelas = $request->namakelas;
         $kelas->save();
+        \Session::flash('flash_message', 'Data Berhasil Ditambahkan');
 
         return redirect()->route('kelas.index');
     }
@@ -46,6 +47,7 @@ class Kelas extends Controller
         $kelas = \App\Models\Kelas::find($id);
         $kelas->nama_kelas = $request->namakelas;
         $kelas->save();
+        \Session::flash('flash_message', 'Data Berhasil Diubah');
 
         return redirect()->route('kelas.index');
     }
@@ -53,6 +55,7 @@ class Kelas extends Controller
     {
         $kelas = \App\Models\Kelas::find($id);
         $kelas->delete();
+        \Session::flash('flash_message', 'Data Berhasil Dihapus');
 
         return redirect()->route('kelas.index');
     }
