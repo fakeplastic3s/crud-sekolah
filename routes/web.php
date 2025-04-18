@@ -30,4 +30,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/kelas/edit/{id}', [\App\Http\Controllers\Kelas::class, 'edit'])->name('kelas.edit');
     Route::post('/kelas/update/{id}', [\App\Http\Controllers\Kelas::class, 'update'])->name('kelas.update');
     Route::DELETE('/kelas/hapus/{id}', [\App\Http\Controllers\Kelas::class, 'hapus'])->name('kelas.hapus');
+
+    Route::get('/siswa', [\App\Http\Controllers\Siswa::class, 'index'])->name('siswa.index');
+    Route::get('/siswa/tambah', [\App\Http\Controllers\Siswa::class, 'tambah'])->name('siswa.tambah');
+    Route::post('/siswa/simpan', [\App\Http\Controllers\Siswa::class, 'simpan'])->name('siswa.simpan');
+    Route::get('/siswa/edit/{id}', [\App\Http\Controllers\Siswa::class, 'edit'])->name('siswa.edit');
+    Route::post('/siswa/update/{id}', [\App\Http\Controllers\Siswa::class, 'update'])->name('siswa.update');
+    Route::DELETE('/siswa/hapus/{id}', [\App\Http\Controllers\Siswa::class, 'hapus'])->name('siswa.hapus');
+    Route::get('/siswa/kelas/{id}', [\App\Http\Controllers\Siswa::class, 'perkelas'])->name('siswa.perkelas');
 });

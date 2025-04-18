@@ -13,6 +13,12 @@
               <span>Kelas</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('siswa*') ? '' : 'collapsed' }}" href="{{ route('siswa.index') }}">
+              <i class="bi bi-person-bounding-box"></i>
+              <span>Siswa</span>
+            </a>
+          </li>
         </ul>
       </aside>
       <!-- End Sidebar-->
