@@ -1,10 +1,10 @@
 <x-layout>
     <div class="pagetitle">
-        <h1>Siswa</h1>
+        <h1>Guru</h1>
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-            <li class="breadcrumb-item active">Siswa</li>
+            <li class="breadcrumb-item active">Guru</li>
           </ol>
         </nav>
       </div><!-- End Page Title -->
@@ -21,7 +21,7 @@
                     </div>
                     <div class="col d-flex justify-content-end">
                         <!-- Tombol Tambah Data -->
-                        <a href="{{ route('siswa.index') }}" class="btn btn-secondary" title="Tambah Data Hasil Karya">
+                        <a href="{{ route('guru.index') }}" class="btn btn-secondary" title="Tambah Data Hasil Karya">
                           <i class="bi bi-arrow-left-circle me-2"></i>Kembali
                         </a>
                     </div>
@@ -29,23 +29,23 @@
       
                 
               <!-- General Form Elements -->
-              <form action="{{ route('siswa.simpan') }}" method="POST" >
+              <form action="{{ route('guru.simpan') }}" method="POST" >
                 @csrf
                 <div class="row mb-3">
-                  <label for="namakelas" class="col-sm-2 col-form-label">Nama Siswa</label>
+                  <label for="namakelas" class="col-sm-2 col-form-label">Nama guru</label>
                   <div class="col-sm-10">
-                    <input type="text" name="nama" class="form-control" placeholder="Masukkan nama siswa" required>
+                    <input type="text" name="nama" class="form-control" placeholder="Masukkan nama guru" required>
                     @if ($errors->has('nama'))
                     <div class="text-danger">
-                      <p>Nama Siswa sudah ada</p>
+                      <p>Nama Guru sudah ada</p>
                     </div>
                     @endif
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label for="nis" class="col-sm-2 col-form-label">NIS</label>
+                  <label for="nip" class="col-sm-2 col-form-label">NIP</label>
                   <div class="col-sm-10">
-                    <input type="number" name="nis" class="form-control" placeholder="Masukkan NIS" required>
+                    <input type="number" name="nip" class="form-control" placeholder="Masukkan NIP" required>
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -57,24 +57,6 @@
                       <option value="{{ $row->id }}">{{ $row->nama_kelas }}</option>
                       @endforeach
                     </select>
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="nama_ayah" class="col-sm-2 col-form-label">Nama Ayah</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="nama_ayah" class="form-control" placeholder="Masukkan nama ayah" required>
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="nama_ibu" class="col-sm-2 col-form-label">Nama Ibu</label>
-                  <div class="col-sm-10">
-                    <input type="text" name="nama_ibu" class="form-control" placeholder="Masukkan nama ibu" required>
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
-                  <div class="col-sm-10">
-                    <textarea name="alamat" class="form-control" placeholder="Masukkan alamat" required></textarea>
                   </div>
                 </div>
                   

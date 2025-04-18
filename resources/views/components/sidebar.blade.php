@@ -19,6 +19,12 @@
               <span>Siswa</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('guru*') ? '' : 'collapsed' }}" href="{{ route('guru.index') }}">
+              <i class="bi bi-person-badge"></i>
+              <span>Guru</span>
+            </a>
+          </li>
         </ul>
       </aside>
       <!-- End Sidebar-->
