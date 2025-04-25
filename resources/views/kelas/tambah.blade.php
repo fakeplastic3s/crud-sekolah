@@ -32,10 +32,10 @@
               <form action="{{ route('kelas.simpan') }}" method="POST" >
                 @csrf
                 <div class="row mb-3">
-                  <label for="namakelas" class="col-sm-2 col-form-label">Nama Kelas</label>
+                  <label for="nama_kelas" class="col-sm-2 col-form-label">Nama Kelas</label>
                   <div class="col-sm-10">
-                    <input type="text" name="namakelas" class="form-control" placeholder="Masukkan nama kelas" required>
-                    @if ($errors->has('namakelas'))
+                    <input type="text" name="nama_kelas" class="form-control" placeholder="Masukkan nama kelas" required>
+                    @if ($errors->has('nama_kelas'))
                     <div class="text-danger">
                       <p>Nama Kelas sudah ada</p>
                     </div>

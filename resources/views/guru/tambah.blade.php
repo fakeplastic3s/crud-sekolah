@@ -46,6 +46,11 @@
                   <label for="nip" class="col-sm-2 col-form-label">NIP</label>
                   <div class="col-sm-10">
                     <input type="number" name="nip" class="form-control" placeholder="Masukkan NIP" required>
+                    @if ($errors->has('nip'))
+                    <div class="text-danger">
+                      <p>NIP sudah ada</p>
+                    </div>
+                    @endif
                   </div>
                 </div>
                 <div class="row mb-3">
